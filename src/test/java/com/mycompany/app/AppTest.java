@@ -22,16 +22,10 @@ public class AppTest
     public void shouldSumTwoIntegers() {
         int resultado = App.sumar(7, 3);
         assertTrue(resultado == 10);
-
-        resultado = App.sumar(-7, -3);
-        assertTrue(resultado == -9);
     }
 
     @Test
     public void testAssertArrayEquals() {
-//        byte[] expected = "trial".getBytes();
-//        byte[] actual = "trial".getBytes();
-
         int expected[] = {2, 3, 5};
         int actual[] = App.primes(3);
         assertArrayEquals("No devuelve los n primeros primos.", expected, actual);
@@ -67,6 +61,10 @@ public class AppTest
         assertEquals("El numero deberia ser primo.", expected, actual);
 
         actual = App.isPrime(33);
+        expected = false;
+        assertEquals("El numero NO deberia ser primo.", expected, actual);
+
+        actual = App.isPrime(4);
         expected = false;
         assertEquals("El numero NO deberia ser primo.", expected, actual);
     }

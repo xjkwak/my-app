@@ -28,27 +28,25 @@ public class App
     public static int generatePrime(int num) {
 
         int prime = 2;
+        int primeN = prime;
         int cont = 0;
 
-        if (num > 1)
-        {
-            while (cont < num) {
-                if (isPrime(prime)) {
-                    cont++;
-                }
-                prime++;
+        while (cont < num) {
+            if (isPrime(prime)) {
+                cont++;
+                primeN = prime;
             }
+            prime++;
         }
 
-
-        return prime;
+        return primeN;
     }
 
     public static boolean isPrime(int num) {
 
         int c = 0;
 
-        for (int i = 2; i < Math.sqrt(num); i++) {
+        for (int i = 2; i <= Math.sqrt(num); i++) {
             if (num % i == 0) {
                 c++;
             }
